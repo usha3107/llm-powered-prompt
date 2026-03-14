@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  prompt-router:
+    build: .
+    container_name: prompt-router-app
+    # Pass through standard input for interactive terminal testing
+    stdin_open: true
+    tty: true
+    env_file:
+      - .env
+    volumes:
+      - ./:/app
